@@ -17,7 +17,7 @@
     </header>
     <main class="main-section">
         <section class="display-data-section">
-        <article class="card dashboard">
+            <article class="card dashboard">
                 <table>
                     <tbody>
                         <tr class="table-row">
@@ -62,7 +62,19 @@
                         </tr>
                     </tbody>
                 </table>
-        </article>         
+            </article>
+        </section>
+        <section class="input-container">
+            <form action="" id="input-form" class="input-form">
+                <label for="ingredients-name" class="input-section--label">Name der Zutat</label>
+                <input type="text" name="ingredients-name" id="ingredients-name" class="input-section--field">
+
+                <label for="ingredients-amount" class="input-section--label">Menge (g)</label>
+                <input type="number" name="ingredients-name" id="ingredients-name" class="input-section--field">
+
+                <button id="form-submit-button" class="form-submit-button">Zutat hinzufügen</button>
+            </form>
+        </section>             
     </main>
 </body>
 </html>
