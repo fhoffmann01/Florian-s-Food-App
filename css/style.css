@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-1,
+.col-2 {
+  flex-basis: 50%;
+}
+
+.col-3,
+.col-4,
+.col-5,
+.col-6 {
+  flex-basis: 25%;
+}
+
+/*
+
+*/
+
+/*# sourceMappingURL=style.css.map */
