@@ -20,10 +20,20 @@ $whiteTwo: rgb(242, 246, 249);
     font-family: $font-stack;
 }
 
+.display-data-section {
+    display: flex;
+    justify-content: center;
+}
+
 .card {
     display: flex;
     flex-wrap: wrap;
     background-color: $manjaro-slight-grey;
+
+    width: 84%;
+    color: $whiteOne;
+    border-radius: 1em;
+    padding: 1.5em;
 }
 
 .col-1,
@@ -40,12 +50,12 @@ $whiteTwo: rgb(242, 246, 249);
 
 .value {
     text-align: right;
-
 }
 
 article p {
     display: block;
     width: 100%;
     margin: auto 0;
+
 }
 

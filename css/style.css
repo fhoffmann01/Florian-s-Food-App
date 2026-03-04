@@ -3,10 +3,19 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 
+.display-data-section {
+  display: flex;
+  justify-content: center;
+}
+
 .card {
   display: flex;
   flex-wrap: wrap;
   background-color: rgb(68, 77, 74);
+  width: 84%;
+  color: #e0e4e5;
+  border-radius: 1em;
+  padding: 1.5em;
 }
 
 .col-1,
