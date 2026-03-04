@@ -17,12 +17,13 @@ $whiteTwo: rgb(242, 246, 249);
 
 * {
     margin: 0;
+    font-family: $font-stack;
 }
-
 
 .card {
     display: flex;
     flex-wrap: wrap;
+
 }
 
 .col-1,
@@ -37,4 +38,9 @@ $whiteTwo: rgb(242, 246, 249);
     flex-basis: 25%;
 }
 
-
+.value {
+    display: block;
+    width: 100%;
+    margin: auto;
+    text-align: right;
+}
