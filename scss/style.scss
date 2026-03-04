@@ -23,7 +23,7 @@ $whiteTwo: rgb(242, 246, 249);
 .card {
     display: flex;
     flex-wrap: wrap;
-
+    background-color: $manjaro-slight-grey;
 }
 
 .col-1,
@@ -39,8 +39,13 @@ $whiteTwo: rgb(242, 246, 249);
 }
 
 .value {
+    text-align: right;
+
+}
+
+article p {
     display: block;
     width: 100%;
-    margin: auto;
-    text-align: right;
+    margin: auto 0;
 }
+

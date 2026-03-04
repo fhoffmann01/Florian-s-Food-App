@@ -6,6 +6,7 @@
 .card {
   display: flex;
   flex-wrap: wrap;
+  background-color: rgb(68, 77, 74);
 }
 
 .col-1,
@@ -21,10 +22,13 @@
 }
 
 .value {
+  text-align: right;
+}
+
+article p {
   display: block;
   width: 100%;
-  margin: auto;
-  text-align: right;
+  margin: auto 0;
 }
 
 /*# sourceMappingURL=style.css.map */
