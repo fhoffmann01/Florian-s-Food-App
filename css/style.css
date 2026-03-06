@@ -29,6 +29,17 @@
   grid-column-end: 5;
 }
 
+.col-1,
+.col-2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.col-3,
+.col-4 {
+  margin: auto 0;
+}
+
 .col-2,
 .col-4 {
   text-align: end;
