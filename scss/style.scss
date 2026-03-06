@@ -24,38 +24,31 @@ $whiteTwo: rgb(242, 246, 249);
     display: flex;
     justify-content: center;
 }
-
+ 
 .card {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 4;
+    grid-gap: 1em;
     background-color: $manjaro-slight-grey;
-
-    width: 84%;
+    
     color: $whiteOne;
     border-radius: 1em;
     padding: 1.5em;
 }
 
-.col-1,
+
+.col-1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
 .col-2 {
-    flex-basis: 50%;
+    grid-column-start: 3;
+    grid-column-end: 5;
 }
 
-.col-3, 
-.col-4,
-.col-5,
-.col-6 {
-    flex-basis: 25%;
+.col-2, 
+.col-4 {
+    text-align: end;
 }
-
-.value {
-    text-align: right;
-}
-
-article p {
-    display: block;
-    width: 100%;
-    margin: auto 0;
-
-}
-

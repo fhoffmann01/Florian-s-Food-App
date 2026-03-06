@@ -9,35 +9,29 @@
 }
 
 .card {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 4;
+  grid-gap: 1em;
   background-color: rgb(68, 77, 74);
-  width: 84%;
   color: #e0e4e5;
   border-radius: 1em;
   padding: 1.5em;
 }
 
-.col-1,
+.col-1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
 .col-2 {
-  flex-basis: 50%;
+  grid-column-start: 3;
+  grid-column-end: 5;
 }
 
-.col-3,
-.col-4,
-.col-5,
-.col-6 {
-  flex-basis: 25%;
-}
-
-.value {
-  text-align: right;
-}
-
-article p {
-  display: block;
-  width: 100%;
-  margin: auto 0;
+.col-2,
+.col-4 {
+  text-align: end;
 }
 
 /*# sourceMappingURL=style.css.map */
