@@ -20,6 +20,14 @@ $whiteTwo: rgb(242, 246, 249);
     font-family: $font-stack;
 }
 
+.header {
+    text-align: center;   
+    padding: 1.5em; 
+
+    background-color: $manjaro-green;
+    color: $whiteTwo;
+}
+
 .display-data-section {
     display: flex;
     justify-content: center;
@@ -30,10 +38,11 @@ $whiteTwo: rgb(242, 246, 249);
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 4;
     grid-gap: 1em;
+    width: 84%;
     background-color: $manjaro-slight-grey;
     
     color: $whiteOne;
-    border-radius: 1em;
+    border-radius: 1.2em;
     padding: 1.5em;
 }
 

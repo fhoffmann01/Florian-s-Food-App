@@ -3,6 +3,13 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 
+.header {
+  text-align: center;
+  padding: 1.5em;
+  background-color: #16a085;
+  color: rgb(242, 246, 249);
+}
+
 .display-data-section {
   display: flex;
   justify-content: center;
@@ -13,9 +20,10 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 4;
   grid-gap: 1em;
+  width: 84%;
   background-color: rgb(68, 77, 74);
   color: #e0e4e5;
-  border-radius: 1em;
+  border-radius: 1.2em;
   padding: 1.5em;
 }
 
