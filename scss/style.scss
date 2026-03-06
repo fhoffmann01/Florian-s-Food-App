@@ -3,7 +3,7 @@ $font-stack: Helvetica, Arial, sans-serif;
 $dark-green: #1A6A3E;
 $manjaro-green: #16a085;
 
-$manjaro-dark-grey: hsl(160, 5%, 12%); 
+$manjaro-dark-grey: hsl(163, 6%, 23%); 
 $manjaro-grey: hsl(160, 5%, 20%); 
 $manjaro-light-grey: rgb(52, 59, 56);
 $manjaro-slight-grey: rgb(68, 77, 74);; 
@@ -61,6 +61,7 @@ $whiteTwo: rgb(242, 246, 249);
 .col-2 {
     font-size: 1.5rem;
     font-weight: 900;
+    margin: 0 0 .5em 0;
 }
 
 .col-3, 
@@ -72,3 +73,41 @@ $whiteTwo: rgb(242, 246, 249);
 .col-4 {
     text-align: end;
 }
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: $manjaro-dark-grey;
+    color: $whiteTwo;
+
+    & .input-section {
+        width: 90%;    
+    }
+
+    & .field {
+        padding: .5em;
+        border-radius: 2em;
+        border: none;
+        text-align: center;
+
+        background-color: $manjaro-slight-grey;
+        color: $whiteTwo;    
+    }
+
+    & .label {
+        text-align: center;
+        margin: 2.25em 0 .75em 0;
+    }
+
+    & .form-submit-button {
+        color: $whiteTwo;
+        background-color: $manjaro-slight-grey;
+        border: none;
+        margin: 2em;
+    }
+}
+
+
+
