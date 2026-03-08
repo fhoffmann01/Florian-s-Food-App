@@ -6,7 +6,7 @@ $manjaro-green: #16a085;
 $manjaro-dark-grey: hsl(163, 6%, 23%); 
 $manjaro-grey: hsl(160, 5%, 20%); 
 $manjaro-light-grey: rgb(52, 59, 56);
-$manjaro-slight-grey: rgb(68, 77, 74);; 
+$manjaro-slight-grey: hsl(160, 6%, 28%); 
 $darker-grey: rgb(107, 106, 106);
 $medium-grey: rgb(124, 124, 124);
 $light-grey: rgb(156, 155, 155);
@@ -58,6 +58,7 @@ html, body {
             grid-gap: 1em;
             background-color: $manjaro-slight-grey;
 
+            
             color: $whiteOne;
             border-radius: 1.2em;
             padding: 2em;
@@ -90,7 +91,6 @@ html, body {
             .col-4 {
                 text-align: end;
             }
-
         }
     }
 
@@ -133,6 +133,16 @@ html, body {
             margin: 2em;
         }
     }
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number']{
+    -moz-appearance: textfield;
 }
 
 
