@@ -28,18 +28,26 @@ $whiteTwo: rgb(242, 246, 249);
     color: $whiteTwo;
 }
 
+html, body {
+    height: 100vh;
+}
 .main-section {
     display: flex;
     flex-direction: column;
     align-items: space-between;
     flex: 1;
 
+    height: 93.5vh;
+
     & .display-data-section {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        flex: 1;
+
+
+        flex: auto;
+        overflow-y: scroll;
 
         & .card {
             display: grid;
@@ -54,32 +62,33 @@ $whiteTwo: rgb(242, 246, 249);
             padding: 1.5em;
             margin: .35em;
 
-            & .col-1 {
+            &.col-1 {
                 grid-column-start: 1;
                 grid-column-end: 3;
             }
-        
+
             & .col-2 {
                 grid-column-start: 3;
                 grid-column-end: 5;
             }
-        
+
             & .col-1, 
             .col-2 {
                 font-size: 1.5rem;
                 font-weight: 900;
                 margin: 0 0 .5em 0;
             }
-        
+
             & .col-3, 
             .col-4 {
                 margin: auto 0;
             }
-        
+
             & .col-2, 
             .col-4 {
                 text-align: end;
             }
+
         }
     }
 
@@ -91,6 +100,7 @@ $whiteTwo: rgb(242, 246, 249);
         background-color: $manjaro-dark-grey;
         color: $whiteTwo;
 
+        flex: 0 0 auto;
         & .input-section {
             width: 90%;    
         }
@@ -121,6 +131,7 @@ $whiteTwo: rgb(242, 246, 249);
 
 
  
+
 
 
 
