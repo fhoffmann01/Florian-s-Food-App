@@ -82,46 +82,48 @@ $whiteTwo: rgb(242, 246, 249);
             }
         }
     }
+
+    & .input-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        background-color: $manjaro-dark-grey;
+        color: $whiteTwo;
+
+        & .input-section {
+            width: 90%;    
+        }
+
+        & .field {
+            padding: .5em;
+            border-radius: 2em;
+            border: none;
+            text-align: center;
+
+            background-color: $manjaro-slight-grey;
+            color: $whiteTwo;    
+        }
+
+        & .label {
+            text-align: center;
+            margin: 2.25em 0 .75em 0;
+        }
+
+        & .form-submit-button {
+            color: $whiteTwo;
+            background-color: $manjaro-slight-grey;
+            border: none;
+            margin: 2em;
+        }
+    }
 }
 
 
  
 
 
-.input-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-    background-color: $manjaro-dark-grey;
-    color: $whiteTwo;
-
-    & .input-section {
-        width: 90%;    
-    }
-
-    & .field {
-        padding: .5em;
-        border-radius: 2em;
-        border: none;
-        text-align: center;
-
-        background-color: $manjaro-slight-grey;
-        color: $whiteTwo;    
-    }
-
-    & .label {
-        text-align: center;
-        margin: 2.25em 0 .75em 0;
-    }
-
-    & .form-submit-button {
-        color: $whiteTwo;
-        background-color: $manjaro-slight-grey;
-        border: none;
-        margin: 2em;
-    }
-}
 
 
 

@@ -16,16 +16,14 @@
   align-items: space-between;
   flex: 1;
 }
-
-.display-data-section {
+.main-section .display-data-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex: 1;
 }
-
-.card {
+.main-section .display-data-section .card {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 4;
@@ -37,40 +35,39 @@
   padding: 1.5em;
   margin: 0.35em;
 }
-.card .col-1 {
+.main-section .display-data-section .card .col-1 {
   grid-column-start: 1;
   grid-column-end: 3;
 }
-.card .col-2 {
+.main-section .display-data-section .card .col-2 {
   grid-column-start: 3;
   grid-column-end: 5;
 }
-.card .col-1,
-.card .col-2 {
+.main-section .display-data-section .card .col-1,
+.main-section .display-data-section .card .col-2 {
   font-size: 1.5rem;
   font-weight: 900;
   margin: 0 0 0.5em 0;
 }
-.card .col-3,
-.card .col-4 {
+.main-section .display-data-section .card .col-3,
+.main-section .display-data-section .card .col-4 {
   margin: auto 0;
 }
-.card .col-2,
-.card .col-4 {
+.main-section .display-data-section .card .col-2,
+.main-section .display-data-section .card .col-4 {
   text-align: end;
 }
-
-.input-form {
+.main-section .input-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: hsl(163, 6%, 23%);
   color: rgb(242, 246, 249);
 }
-.input-form .input-section {
+.main-section .input-form .input-section {
   width: 90%;
 }
-.input-form .field {
+.main-section .input-form .field {
   padding: 0.5em;
   border-radius: 2em;
   border: none;
@@ -78,11 +75,11 @@
   background-color: rgb(68, 77, 74);
   color: rgb(242, 246, 249);
 }
-.input-form .label {
+.main-section .input-form .label {
   text-align: center;
   margin: 2.25em 0 0.75em 0;
 }
-.input-form .form-submit-button {
+.main-section .input-form .form-submit-button {
   color: rgb(242, 246, 249);
   background-color: rgb(68, 77, 74);
   border: none;
