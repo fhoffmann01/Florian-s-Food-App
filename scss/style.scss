@@ -28,9 +28,18 @@ $whiteTwo: rgb(242, 246, 249);
     color: $whiteTwo;
 }
 
+.main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    flex: 1;
+}
+
 .display-data-section {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
  
 .card {
@@ -44,35 +53,39 @@ $whiteTwo: rgb(242, 246, 249);
     color: $whiteOne;
     border-radius: 1.2em;
     padding: 1.5em;
+    margin: .35em;
+
+    & .col-1 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    & .col-2 {
+        grid-column-start: 3;
+        grid-column-end: 5;
+    }
+
+    & .col-1, 
+    .col-2 {
+        font-size: 1.5rem;
+        font-weight: 900;
+        margin: 0 0 .5em 0;
+    }
+
+    & .col-3, 
+    .col-4 {
+        margin: auto 0;
+    }
+
+    & .col-2, 
+    .col-4 {
+        text-align: end;
+    }
 }
 
 
-.col-1 {
-    grid-column-start: 1;
-    grid-column-end: 3;
-}
 
-.col-2 {
-    grid-column-start: 3;
-    grid-column-end: 5;
-}
 
-.col-1, 
-.col-2 {
-    font-size: 1.5rem;
-    font-weight: 900;
-    margin: 0 0 .5em 0;
-}
-
-.col-3, 
-.col-4 {
-    margin: auto 0;
-}
-
-.col-2, 
-.col-4 {
-    text-align: end;
-}
 
 .input-form {
     display: flex;

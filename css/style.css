@@ -10,9 +10,18 @@
   color: rgb(242, 246, 249);
 }
 
+.main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  flex: 1;
+}
+
 .display-data-section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .card {
@@ -25,6 +34,7 @@
   color: #e0e4e5;
   border-radius: 1.2em;
   padding: 1.5em;
+  margin: 0.35em;
 }
 
 .col-1 {
