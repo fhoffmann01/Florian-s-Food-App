@@ -22,6 +22,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex: 1;
 }
 
 .card {
@@ -36,31 +37,26 @@
   padding: 1.5em;
   margin: 0.35em;
 }
-
-.col-1 {
+.card .col-1 {
   grid-column-start: 1;
   grid-column-end: 3;
 }
-
-.col-2 {
+.card .col-2 {
   grid-column-start: 3;
   grid-column-end: 5;
 }
-
-.col-1,
-.col-2 {
+.card .col-1,
+.card .col-2 {
   font-size: 1.5rem;
   font-weight: 900;
   margin: 0 0 0.5em 0;
 }
-
-.col-3,
-.col-4 {
+.card .col-3,
+.card .col-4 {
   margin: auto 0;
 }
-
-.col-2,
-.col-4 {
+.card .col-2,
+.card .col-4 {
   text-align: end;
 }
 
