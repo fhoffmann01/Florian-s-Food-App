@@ -94,6 +94,15 @@ html, body {
   background-color: hsl(160, 6%, 28%);
   border: none;
   margin: 2em;
+  padding: 0.8em 1.75em;
+  font-size: 1rem;
+  border-radius: 2em;
+}
+.main-section .input-form .form-submit-button:focus {
+  opacity: 0.8;
+}
+.main-section .input-form .form-submit-button:active {
+  opacity: 0.24;
 }
 
 input[type=number]::-webkit-inner-spin-button,

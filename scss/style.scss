@@ -1,19 +1,6 @@
 $font-stack: Helvetica, Arial, sans-serif;
 
-$dark-green: #1A6A3E;
-$manjaro-green: #16a085;
-
-$manjaro-dark-grey: hsl(163, 6%, 23%); 
-$manjaro-grey: hsl(160, 5%, 20%); 
-$manjaro-light-grey: rgb(52, 59, 56);
-$manjaro-slight-grey: hsl(160, 6%, 28%); 
-$darker-grey: rgb(107, 106, 106);
-$medium-grey: rgb(124, 124, 124);
-$light-grey: rgb(156, 155, 155);
-$lighter-grey: rgb(212, 211, 211);
-
-$whiteOne: #e0e4e5;
-$whiteTwo: rgb(242, 246, 249);
+@use './abstracts/colors';
 
 * {
     margin: 0;
@@ -24,13 +11,14 @@ $whiteTwo: rgb(242, 246, 249);
     text-align: center;   
     padding: 1.5em; 
 
-    background-color: $manjaro-green;
-    color: $whiteTwo;
+    background-color: colors.$manjaro-green;
+    color: colors.$whiteTwo;
 }
 
 html, body {
     height: 100vh;
 }
+
 .main-section {
     display: flex;
     flex-direction: column;
@@ -44,7 +32,7 @@ html, body {
         flex-direction: column;
         align-items: center;
         
-        background-color: $manjaro-grey;
+        background-color: colors.$manjaro-grey;
 
         flex: auto;
         overflow-y: scroll;
@@ -56,10 +44,10 @@ html, body {
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: 4;
             grid-gap: 1em;
-            background-color: $manjaro-slight-grey;
+            background-color: colors.$manjaro-slight-grey;
 
             
-            color: $whiteOne;
+            color: colors.$whiteOne;
             border-radius: 1.2em;
             padding: 2em;
             
@@ -103,8 +91,8 @@ html, body {
         flex-direction: column;
         align-items: center;
 
-        background-color: $manjaro-dark-grey;
-        color: $whiteTwo;
+        background-color: colors.$manjaro-dark-grey;
+        color: colors.$whiteTwo;
 
         flex: 0 0 auto;
         & .input-section {
@@ -117,8 +105,8 @@ html, body {
             border: none;
             text-align: center;
 
-            background-color: $manjaro-slight-grey;
-            color: $whiteTwo;    
+            background-color: colors.$manjaro-slight-grey;
+            color: colors.$whiteTwo;    
         }
 
         & .label {
@@ -127,10 +115,22 @@ html, body {
         }
 
         & .form-submit-button {
-            color: $whiteTwo;
-            background-color: $manjaro-slight-grey;
+            color: colors.$whiteTwo;
+            background-color: colors.$manjaro-slight-grey;
             border: none;
             margin: 2em;
+
+            padding: 0.8em 1.75em;
+            font-size: 1rem;
+            border-radius: 2em;
+        }
+
+        & .form-submit-button:focus {
+            opacity: .8;
+        }
+
+        & .form-submit-button:active {
+            opacity: .24;
         }
     }
 }
@@ -144,13 +144,3 @@ input[type=number]::-webkit-outer-spin-button {
 input[type='number']{
     -moz-appearance: textfield;
 }
-
-
- 
-
-
-
-
-
-
-
