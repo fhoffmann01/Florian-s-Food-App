@@ -76,6 +76,7 @@ html, body {
 }
 .main-section .input-form .input-section {
   width: 90%;
+  line-height: 1.5em;
 }
 .main-section .input-form .field {
   padding: 0.5em;
