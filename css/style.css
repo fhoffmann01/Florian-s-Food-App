@@ -39,7 +39,7 @@ html, body {
   color: #e0e4e5;
   border-radius: 1.2em;
   padding: 2em;
-  margin: 1.5em 1.5em 0 1.5em;
+  margin: 0.75em 0.75em 0 0.75em;
 }
 .main-section .display-data-section .card .col-1 {
   grid-column-start: 1;
@@ -74,11 +74,9 @@ html, body {
   color: rgb(242, 246, 249);
   flex: 0 0 auto;
 }
-.main-section .input-form .input-section {
+.main-section .input-form .input-field {
   width: 90%;
   line-height: 1.5em;
-}
-.main-section .input-form .field {
   padding: 0.5em;
   border-radius: 2em;
   border: none;
@@ -88,7 +86,7 @@ html, body {
 }
 .main-section .input-form .label {
   text-align: center;
-  margin: 2.25em 0 0.75em 0;
+  margin: 1.5em 0 0.5em 0;
 }
 .main-section .input-form .form-submit-button {
   color: rgb(242, 246, 249);

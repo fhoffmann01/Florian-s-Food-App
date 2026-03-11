@@ -51,7 +51,7 @@ html, body {
             border-radius: 1.2em;
             padding: 2em;
             
-            margin: 1.5em 1.5em 0 1.5em;
+            margin: .75em .75em 0 .75em;
 
             & .col-1 {
                 grid-column-start: 1;
@@ -95,11 +95,11 @@ html, body {
         color: colors.$whiteTwo;
 
         flex: 0 0 auto;
-        & .input-section {
+        
+        & .input-field {
             width: 90%;
-            line-height: 1.5em;        }
+            line-height: 1.5em;        
 
-        & .field {
             padding: .5em;
             border-radius: 2em;
             border: none;
@@ -111,7 +111,7 @@ html, body {
 
         & .label {
             text-align: center;
-            margin: 2.25em 0 .75em 0;
+            margin: 1.5em 0 .5em 0;
         }
 
         & .form-submit-button {
