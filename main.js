@@ -13,6 +13,9 @@ inputForm.addEventListener('submit', (e) => {
     const template = document.getElementById("ingredient-card");
 
     const node = document.importNode(template.content, true);
+
+   
+    
     displayDataSection.appendChild(node);
 })
 
