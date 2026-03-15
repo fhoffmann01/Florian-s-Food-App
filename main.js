@@ -11,31 +11,17 @@ inputForm.addEventListener('submit', (e) => {
     const displayDataSection = document.querySelector(".display-data-section");
     const template = document.getElementById("ingredient-card");
 
-    //const node = document.importNode(template.content, true);´
-
-    //node.querySelector(".ingredient-name").textContent = "Ei"
-    //node.querySelector(".ingredient-amount").textContent = "100 g" 
-    //node.querySelector(".calories").textContent = "156 kcal" 
-    //node.querySelector(".carbohydrates").textContent = "1.1 g" 
-    //node.querySelector(".thereof-sugars").textContent = "1.1 g" 
-    //node.querySelector(".fats").textContent = "11 g" 
-    //node.querySelector(".thereof-fattyacids").textContent = "0 g" 
-    //node.querySelector(".proteins").textContent = "13 g" 
-    //node.querySelector(".fibre").textContent = "0 g" 
-    //node.querySelector(".salt").textContent = "0.3 g" 
-
-    //displayDataSection.appendChild(node);
-
     const dbDataset = queryDBForExistingEntry(formObj["name"]);
     const scaledDataset = scaleDataset(dbDataset, consumedAmount)
 
     //console.log(dbDataset["amount"])
-    console.log(scaledDataset)
+
+    renderCardList(scaledDataset, template, displayDataSection)
 })
 
 function queryDBForExistingEntry(nameOfIngredient){
     ingredientObj = {
-        name: "Ei",
+        name: nameOfIngredient,
         amount: 100,
         calories: 156,
         carbohydrates: 1.1,
@@ -66,18 +52,23 @@ function scaleDataset(dbDataset, consumedAmount){
     return dbDataset
 }
 
-/*
-function updateCard(formObj){
-    formObj["calories"] = 
-    formObj["calories"] = 
-    formObj["calories"] = 
-    formObj["calories"] = 
-    formObj["calories"] = 
-    formObj["calories"] = 
-    formObj["calories"] = 
-    formObj["calories"] = 
+function renderCardList(cardData, template, templateContainer){
+    const node = document.importNode(template.content, true);
+
+    node.querySelector(".ingredient-name").textContent = cardData["name"]
+    node.querySelector(".ingredient-amount").textContent = `${cardData["amount"].toFixed(0)} g`
+    node.querySelector(".calories").textContent = `${cardData["calories"].toFixed(0)} kcal`
+    node.querySelector(".carbohydrates").textContent = `${cardData["carbohydrates"].toFixed(0)} g` 
+    node.querySelector(".thereof-sugars").textContent = `${cardData["thereofSugars"].toFixed(0)} g`
+    node.querySelector(".fats").textContent = `${cardData["fats"].toFixed(0)} g`
+    node.querySelector(".thereof-fattyacids").textContent = `${cardData["thereofSatFattyAcids"].toFixed(0)} g`
+    node.querySelector(".proteins").textContent = `${cardData["proteins"].toFixed(0)} g`
+    node.querySelector(".fibre").textContent = `${cardData["fibre"].toFixed(0)} g`
+    node.querySelector(".salt").textContent = `${cardData["salt"].toFixed(0)} g`
+
+    templateContainer.appendChild(node);
+
 }
-*/
 
 //Try to put code in inputForm into container
 //Rethink on macro level what the app should do and if the ui looks ok.
