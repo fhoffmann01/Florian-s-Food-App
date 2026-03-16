@@ -15,7 +15,6 @@ inputForm.addEventListener('submit', (e) => {
     const scaledDataset = scaleDataset(dbDataset, consumedAmount)
 
     //console.log(dbDataset["amount"])
-
     renderCardList(scaledDataset, template, displayDataSection)
 })
 
@@ -69,6 +68,3 @@ function renderCardList(cardData, template, templateContainer){
     templateContainer.appendChild(node);
 
 }
-
-//Try to put code in inputForm into container
-//Rethink on macro level what the app should do and if the ui looks ok.

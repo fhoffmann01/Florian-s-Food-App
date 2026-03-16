@@ -1,6 +1,7 @@
 $font-stack: Helvetica, Arial, sans-serif;
 
 @use './abstracts/colors';
+@use './components/card';
 
 * {
     margin: 0;
@@ -36,50 +37,6 @@ html, body {
 
         flex: auto;
         overflow-y: scroll;
-
-        & .card {
-            display: grid;
-            box-sizing: border-box;
-
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: 4;
-            grid-gap: 1em;
-            background-color: colors.$manjaro-slight-grey;
-
-            
-            color: colors.$whiteOne;
-            border-radius: 1.2em;
-            padding: 1.5em;
-            
-            margin: .75em .75em 0 .75em;
-
-            & .col-1 {
-                grid-column-start: 1;
-                grid-column-end: 3;
-            }
-
-            & .col-2 {
-                grid-column-start: 3;
-                grid-column-end: 5;
-            }
-
-            & .col-1, 
-            .col-2 {
-                font-size: 1.5rem;
-                font-weight: 900;
-                margin: 0 0 .5em 0;
-            }
-
-            & .col-3, 
-            .col-4 {
-                margin: auto 0;
-            }
-
-            & .col-2, 
-            .col-4 {
-                text-align: end;
-            }
-        }
     }
 
     & .card:last-child {
@@ -118,7 +75,7 @@ html, body {
             color: colors.$whiteTwo;
             background-color: colors.$manjaro-slight-grey;
             border: none;
-            margin: 2em;
+            margin: 1em;
 
             padding: 0.8em 1.75em;
             font-size: 1rem;
@@ -143,4 +100,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 input[type='number']{
     -moz-appearance: textfield;
+}
+
+summary{
+    border: 2px solid red
 }
