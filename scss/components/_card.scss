@@ -27,6 +27,8 @@
     grid-row: 1 /12;
     grid-template-columns: 1fr 1fr;
 
+    
+
     & .value {
         text-align: right;
     }
@@ -38,6 +40,8 @@
 
     row-gap: 1em;
     column-gap: 1em;
+    
+    margin-top: 2em;
 
     & .value {
         text-align: right;
