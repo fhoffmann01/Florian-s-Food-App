@@ -18,6 +18,8 @@
   grid-column: 1/2;
   grid-row: 1/12;
   grid-template-columns: 1fr 1fr;
+  font-size: 1rem;
+  font-weight: 900;
 }
 .card-summary .value {
   text-align: right;
@@ -29,6 +31,7 @@
   row-gap: 1em;
   column-gap: 1em;
   margin-top: 2em;
+  font-size: 0.8rem;
 }
 .nutrition-value-container .value {
   text-align: right;
