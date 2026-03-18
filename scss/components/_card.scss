@@ -7,11 +7,6 @@
     display: grid;
     
     box-sizing: border-box;
-    /*
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 4;
-    grid-gap: 1em;
-    */
     
     background-color: colors.$manjaro-slight-grey;
 
@@ -26,7 +21,7 @@
     margin-bottom: .75em;
 }
 
-.head-section {
+.card-summary {
     display: grid;
     grid-column: 1 / 2;
     grid-row: 1 /12;
@@ -35,14 +30,14 @@
     & .value {
         text-align: right;
     }
-
-
 }
 
 .nutrition-value-container {
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
+
+    row-gap: 1em;
+    column-gap: 1em;
 
     & .value {
         text-align: right;
@@ -50,3 +45,8 @@
         align-items: center;
     }
 }
+
+/*
+    - Resize summary row
+    - Gaps 
+*/
