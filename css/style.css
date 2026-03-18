@@ -1,36 +1,40 @@
 .card {
+  width: 96%;
   display: grid;
   box-sizing: border-box;
+  /*
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 4;
   grid-gap: 1em;
+  */
   background-color: hsl(160, 6%, 28%);
   color: #e0e4e5;
   border-radius: 1.2em;
   padding: 1.5em;
   margin: 0.75em 0.75em 0 0.75em;
 }
-.card .col-1 {
-  grid-column-start: 1;
-  grid-column-end: 3;
+
+.card:last-child {
+  margin-bottom: 0.75em;
 }
-.card .col-2 {
-  grid-column-start: 3;
-  grid-column-end: 5;
+
+.head-section {
+  display: grid;
+  grid-column: 1/2;
+  grid-row: 1/12;
+  grid-template-columns: 1fr 1fr;
 }
-.card .col-1,
-.card .col-2 {
-  font-size: 1.5rem;
-  font-weight: 900;
-  margin: 0 0 0.5em 0;
+.head-section .value {
+  text-align: right;
 }
-.card .col-3,
-.card .col-4 {
-  margin: auto 0;
+
+.nutrition-value-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
-.card .col-2,
-.card .col-4 {
-  text-align: end;
+.nutrition-value-container .value {
+  text-align: right;
+  align-items: center;
 }
 
 * {
@@ -63,9 +67,6 @@ html, body {
   background-color: hsl(160, 5%, 20%);
   flex: auto;
   overflow-y: scroll;
-}
-.main-section .card:last-child {
-  margin-bottom: 1.5em;
 }
 .main-section .input-form {
   display: flex;
@@ -113,10 +114,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield;
-}
-
-summary {
-  border: 2px solid red;
 }
 
 /*# sourceMappingURL=style.css.map */

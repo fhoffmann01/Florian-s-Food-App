@@ -2,11 +2,17 @@
 
 
 .card {
+    
+    width: 96%;
     display: grid;
+    
     box-sizing: border-box;
+    /*
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 4;
     grid-gap: 1em;
+    */
+    
     background-color: colors.$manjaro-slight-grey;
 
     color: colors.$whiteOne;
@@ -14,30 +20,33 @@
     padding: 1.5em;
      
     margin: .75em .75em 0 .75em;
-    
-    & .col-1 {
-        grid-column-start: 1;
-        grid-column-end: 3;
-    }
-    & .col-2 {
-        grid-column-start: 3;
-        grid-column-end: 5;
-    }
-    
-    & .col-1, 
-    .col-2 {
-        font-size: 1.5rem;
-        font-weight: 900;
-        margin: 0 0 .5em 0;
+}
+
+.card:last-child {
+    margin-bottom: .75em;
+}
+
+.head-section {
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row: 1 /12;
+    grid-template-columns: 1fr 1fr;
+
+    & .value {
+        text-align: right;
     }
 
-    & .col-3, 
-    .col-4 {
-        margin: auto 0;
-    }
 
-    & .col-2, 
-    .col-4 {
-        text-align: end;
+}
+
+.nutrition-value-container {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    & .value {
+        text-align: right;
+
+        align-items: center;
     }
 }
