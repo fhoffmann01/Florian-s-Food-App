@@ -17,13 +17,12 @@ inputForm.addEventListener('submit', (e) => {
     
     const scaledDataset = scaleDataset(dbDataset, consumedAmount);
     
-    //console.log(dbDataset["amount"])
     renderCardList(scaledDataset, template, displayDataSection);
 })
 
 displayDataSection.addEventListener('click', (e) => {
     const card = e.target.closest('.card');
-    
+
     if (card) {
         console.log(card.dataset.selected);
         card.dataset.selected = card.dataset.selected !== 'true';
