@@ -1,25 +1,36 @@
-const inputForm = document.getElementById("input-form")
+const inputForm = document.getElementById("input-form");
+const displayDataSection = document.querySelector(".display-data-section");
+let idCounter = 0
 
 inputForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const inputFormData = new FormData(inputForm)
-    const formObj = Object.fromEntries(inputFormData)
+    const inputFormData = new FormData(inputForm);
+    const formObj = Object.fromEntries(inputFormData);
 
     const consumedAmount = parseFloat(formObj["amount"]);
 
-    const displayDataSection = document.querySelector(".display-data-section");
     const template = document.getElementById("ingredient-card");
-
+    idCounter += 1
+    console.log(idCounter)
     const dbDataset = queryDBForExistingEntry(formObj["name"]);
-    const scaledDataset = scaleDataset(dbDataset, consumedAmount)
+    
+    
+    const scaledDataset = scaleDataset(dbDataset, consumedAmount);
 
     //console.log(dbDataset["amount"])
-    renderCardList(scaledDataset, template, displayDataSection)
+    renderCardList(scaledDataset, template, displayDataSection);
+})
+
+displayDataSection.addEventListener('click', (e) => {
+    console.log(e.target);
 })
 
 function queryDBForExistingEntry(nameOfIngredient){
+    //Let' provide first fixed fake values. 
+    //Calling information from indexeddb feature should come later...
     ingredientObj = {
+        id: idCounter,
         name: nameOfIngredient,
         amount: 100,
         calories: 156,
@@ -31,24 +42,25 @@ function queryDBForExistingEntry(nameOfIngredient){
         fibre: 0,
         salt: 0.3,
     }
-
+  
+    console.log("ingredientObj.id", ingredientObj.id)
     return ingredientObj;
 }
 
 function scaleDataset(dbDataset, consumedAmount){
     const factor = consumedAmount / dbDataset["amount"]
     
-    dbDataset["amount"] = (factor * dbDataset["amount"])
-    dbDataset["calories"] = (factor * dbDataset["calories"])
-    dbDataset["carbohydrates"] = (factor * dbDataset["carbohydrates"])
-    dbDataset["thereofSugars"] = (factor * dbDataset["thereofSugars"])
-    dbDataset["fats"] = (factor * dbDataset["fats"])
-    dbDataset["thereofSatFattyAcids"] = (factor * dbDataset["thereofSatFattyAcids"])
-    dbDataset["proteins"] = (factor * dbDataset["proteins"])
-    dbDataset["fibre"] = (factor * dbDataset["fibre"])
-    dbDataset["salt"] = (factor * dbDataset["salt"])
+    dbDataset["amount"] = (factor * dbDataset["amount"]);
+    dbDataset["calories"] = (factor * dbDataset["calories"]);
+    dbDataset["carbohydrates"] = (factor * dbDataset["carbohydrates"]);
+    dbDataset["thereofSugars"] = (factor * dbDataset["thereofSugars"]);
+    dbDataset["fats"] = (factor * dbDataset["fats"]);
+    dbDataset["thereofSatFattyAcids"] = (factor * dbDataset["thereofSatFattyAcids"]);
+    dbDataset["proteins"] = (factor * dbDataset["proteins"]);
+    dbDataset["fibre"] = (factor * dbDataset["fibre"]);
+    dbDataset["salt"] = (factor * dbDataset["salt"]);
 
-    return dbDataset
+    return dbDataset;
 }
 
 function renderCardList(cardData, template, templateContainer){
