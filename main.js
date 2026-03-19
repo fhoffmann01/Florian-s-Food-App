@@ -15,19 +15,23 @@ inputForm.addEventListener('submit', (e) => {
     console.log(idCounter)
     const dbDataset = queryDBForExistingEntry(formObj["name"]);
     
-    
     const scaledDataset = scaleDataset(dbDataset, consumedAmount);
-
+    
     //console.log(dbDataset["amount"])
     renderCardList(scaledDataset, template, displayDataSection);
 })
 
 displayDataSection.addEventListener('click', (e) => {
-    console.log(e.target);
+    const card = e.target.closest('.card');
+    
+    if (card) {
+        console.log(card.dataset.selected);
+        card.dataset.selected = card.dataset.selected !== 'true';
+    }
 })
 
 function queryDBForExistingEntry(nameOfIngredient){
-    //Let' provide first fixed fake values. 
+    //Let's provide first fixed fake values. 
     //Calling information from indexeddb feature should come later...
     ingredientObj = {
         id: idCounter,
@@ -78,5 +82,5 @@ function renderCardList(cardData, template, templateContainer){
     node.querySelector(".salt").textContent = `${cardData["salt"].toFixed(0)} g`
 
     templateContainer.appendChild(node);
-
+    
 }
