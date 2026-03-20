@@ -58,7 +58,10 @@
 
 .select-indicator.highlighted {
     background-color: colors.$whiteOne;
-    
+}
+
+.hidden {
+    display: none
 }
 
 .nutrition-value-container {
