@@ -1,6 +1,8 @@
 const inputForm = document.getElementById("input-form");
 const displayDataSection = document.querySelector(".display-data-section");
 const deleteButton = document.querySelector(".delete-button")
+const formSubmitButton = document.querySelector(".form-submit-button")
+
 let idCounter = 0
 
 inputForm.addEventListener('submit', (e) => {
@@ -43,6 +45,8 @@ displayDataSection.addEventListener('click', e => {
         if(e.target.tagName === 'DETAILS'){
             card.dataset.selected = card.dataset.selected !== 'true';
 
+            deleteButton.classList.toggle("hidden")
+            formSubmitButton.classList.toggle("hidden")
             e.target.classList.toggle("highlighted")
             e.target.firstElementChild.firstElementChild.classList.toggle("highlighted")
         }
