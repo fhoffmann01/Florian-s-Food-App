@@ -1,6 +1,7 @@
 @use '../abstracts/colors';
 
 
+
 .card {
     width: 95.5%;
     display: grid;
@@ -40,16 +41,24 @@
 
     & .value {
         pointer-events: auto;    
-
         text-align: right;
     }
 
     & .select-indicator {
         background-color: colors.$manjaro-dark-grey; //colors.$whiteTwo;
-        height: 2em;
-        width: 2em;
+        height: 1.75em;
+        width: 1.75em;
         border-radius: .5em;
     }  
+}
+.card.highlighted{
+    border: 1px solid colors.$whiteTwo;
+    //box-shadow: 0 0 2px .9px colors.$whiteTwo;
+}
+
+.select-indicator.highlighted {
+    background-color: colors.$whiteOne;
+    
 }
 
 .nutrition-value-container {

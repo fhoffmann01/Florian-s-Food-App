@@ -24,8 +24,17 @@ displayDataSection.addEventListener('click', (e) => {
     const card = e.target.closest('.card');
 
     if (card) {
-        console.log(card.dataset.selected);
-        card.dataset.selected = card.dataset.selected !== 'true';
+
+        if(e.target.tagName === 'DETAILS'){
+
+            card.dataset.selected = card.dataset.selected !== 'true';
+            console.log(e.target)
+
+            console.log(...e.target.firstElementChild.firstElementChild.classList)
+            e.target.classList.toggle("highlighted")
+            e.target.firstElementChild.firstElementChild.classList.toggle("highlighted")
+            console.log(...e.target.firstElementChild.firstElementChild.classList)
+        }
     }
 })
 

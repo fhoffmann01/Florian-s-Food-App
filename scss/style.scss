@@ -3,6 +3,8 @@ $font-stack: Helvetica, Arial, sans-serif;
 @use './abstracts/colors';
 @use './components/card';
 
+
+
 * {
     margin: 0;
     font-family: $font-stack;
@@ -38,7 +40,6 @@ html, body {
         flex: auto;
         overflow-y: scroll;
     }
-
     
 
     & .input-form {

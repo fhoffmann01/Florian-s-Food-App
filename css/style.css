@@ -33,9 +33,17 @@
 }
 .card-summary .select-indicator {
   background-color: hsl(163, 6%, 23%);
-  height: 2em;
-  width: 2em;
+  height: 1.75em;
+  width: 1.75em;
   border-radius: 0.5em;
+}
+
+.card.highlighted {
+  border: 1px solid rgb(242, 246, 249);
+}
+
+.select-indicator.highlighted {
+  background-color: #e0e4e5;
 }
 
 .nutrition-value-container {
