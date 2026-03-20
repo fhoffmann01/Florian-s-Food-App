@@ -1,6 +1,6 @@
-.form-submit-button {
-    color: colors.$whiteTwo;
-    background-color: colors.$manjaro-slight-grey;
+@use '../abstracts/colors';
+
+.button {
     border: none;
     margin: 1em;
 
@@ -9,12 +9,22 @@
     border-radius: 2em;
 }
 
+.form-submit-button {
+    color: colors.$whiteTwo;
+    background-color: colors.$manjaro-slight-grey;
+}
 
+.delete-button {
+    color: colors.$whiteTwo;
+    background-color: red;
+}
 
+.delete-button:focus, 
 .form-submit-button:focus {
     opacity: .8;
 }
-        
+
+.delete-button:active,
 .form-submit-button:active {
     opacity: .24;
 }
