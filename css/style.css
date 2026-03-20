@@ -97,7 +97,7 @@
 
 .delete-button {
   color: rgb(242, 246, 249);
-  background-color: red;
+  background-color: hsl(0, 100%, 30%);
 }
 
 .delete-button:focus,
