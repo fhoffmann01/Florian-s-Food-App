@@ -2,7 +2,7 @@ $font-stack: Helvetica, Arial, sans-serif;
 
 @use './abstracts/colors';
 @use './components/card';
-
+@use './components/inputForm';
 
 
 * {
@@ -42,53 +42,7 @@ html, body {
     }
     
 
-    & .input-form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        background-color: colors.$manjaro-dark-grey;
-        color: colors.$whiteTwo;
-
-        flex: 0 0 auto;
-        
-        & .input-field {
-            width: 90%;
-            line-height: 1.5em;        
-
-            padding: .5em;
-            border-radius: 2em;
-            border: none;
-            text-align: center;
-
-            background-color: colors.$manjaro-slight-grey;
-            color: colors.$whiteTwo;    
-        }
-
-        & .label {
-            text-align: center;
-            margin: 1.5em 0 .5em 0;
-        }
-
-        & .form-submit-button {
-            color: colors.$whiteTwo;
-            background-color: colors.$manjaro-slight-grey;
-            border: none;
-            margin: 1em;
-
-            padding: 0.8em 1.75em;
-            font-size: 1rem;
-            border-radius: 2em;
-        }
-
-        & .form-submit-button:focus {
-            opacity: .8;
-        }
-
-        & .form-submit-button:active {
-            opacity: .24;
-        }
-    }
+    
 }
 
 input[type=number]::-webkit-inner-spin-button, 

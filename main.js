@@ -30,10 +30,10 @@ displayDataSection.addEventListener('click', (e) => {
             card.dataset.selected = card.dataset.selected !== 'true';
             console.log(e.target)
 
-            console.log(...e.target.firstElementChild.firstElementChild.classList)
+            //console.log(...e.target.firstElementChild.firstElementChild.classList)
             e.target.classList.toggle("highlighted")
             e.target.firstElementChild.firstElementChild.classList.toggle("highlighted")
-            console.log(...e.target.firstElementChild.firstElementChild.classList)
+            //console.log(...e.target.firstElementChild.firstElementChild.classList)
         }
     }
 })
