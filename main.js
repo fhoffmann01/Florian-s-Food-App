@@ -1,9 +1,12 @@
 const inputForm = document.getElementById("input-form");
 const displayDataSection = document.querySelector(".display-data-section");
+const deleteButton = document.querySelector(".delete-button")
 let idCounter = 0
 
 inputForm.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    console.log(e)
 
     const inputFormData = new FormData(inputForm);
     const formObj = Object.fromEntries(inputFormData);
@@ -20,20 +23,28 @@ inputForm.addEventListener('submit', (e) => {
     renderCardList(scaledDataset, template, displayDataSection);
 })
 
-displayDataSection.addEventListener('click', (e) => {
+//Delete Selection
+deleteButton.addEventListener('click', e => {
+    const entriesToBeDeletedNodeList = document.querySelectorAll('[data-selected="true"]');
+    
+    if(entriesToBeDeletedNodeList){
+        for(let entry of entriesToBeDeletedNodeList){
+            entry.parentElement.removeChild(entry)
+        }
+    } else {
+        console.log("No entries selected.")
+    }
+})
+
+displayDataSection.addEventListener('click', e => {
     const card = e.target.closest('.card');
 
     if (card) {
-
         if(e.target.tagName === 'DETAILS'){
-
             card.dataset.selected = card.dataset.selected !== 'true';
-            console.log(e.target)
 
-            //console.log(...e.target.firstElementChild.firstElementChild.classList)
             e.target.classList.toggle("highlighted")
             e.target.firstElementChild.firstElementChild.classList.toggle("highlighted")
-            //console.log(...e.target.firstElementChild.firstElementChild.classList)
         }
     }
 })
