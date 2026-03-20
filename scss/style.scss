@@ -3,7 +3,7 @@ $font-stack: Helvetica, Arial, sans-serif;
 @use './abstracts/colors';
 @use './components/card';
 @use './components/inputForm';
-
+@use './components/button';
 
 * {
     margin: 0;
