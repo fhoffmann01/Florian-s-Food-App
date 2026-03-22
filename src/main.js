@@ -7,7 +7,6 @@ import { queryDBForExistingEntry } from "./queryDBForExistingEntry.js"
 import { showButton } from "./showButton.js"
 import { hideDeleteButton } from "./hideDeleteButton.js"
 
-
 const inputForm = document.getElementById("input-form");
 const displayDataSection = document.querySelector(".display-data-section");
 const deleteButton = document.querySelector(".delete-button")
@@ -40,12 +39,7 @@ displayDataSection.addEventListener('click', e => {
     showButton(deleteButton)
 })
 
-function hideDeleteButton(cardContainer, deleteButton){
-    if(cardContainer.querySelectorAll("details.highlighted").length === 0) {
-        console.log("No cards selected.")
-        deleteButton.classList.add("hidden")
-    } 
-}
+
 
 function hideFormSubmitButton(otherButtons){
     
