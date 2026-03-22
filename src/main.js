@@ -3,6 +3,9 @@ import { scaleDataset } from "./scaleDataset.js"
 import  { removeSelectedEntries } from "./removeSelectedEntries.js"
 import { highlightSelectedCard } from "./highlightSelectedCard.js"
 import { renderCardList } from "./renderCardList.js"
+import { queryDBForExistingEntry } from "./queryDBForExistingEntry.js"
+import { showButton } from "./showButton.js"
+import { hideDeleteButton } from "./hideDeleteButton.js"
 
 
 const inputForm = document.getElementById("input-form");
@@ -10,7 +13,6 @@ const displayDataSection = document.querySelector(".display-data-section");
 const deleteButton = document.querySelector(".delete-button")
 const formSubmitButton = document.querySelector(".form-submit-button")
 
-let idCounter = 0
 
 inputForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -21,7 +23,6 @@ inputForm.addEventListener('submit', (e) => {
 
     const consumedAmount = parseFloat(formObj["amount"]);
 
-    idCounter += 1
     
     const dbDataset = queryDBForExistingEntry(formObj["name"]);
     
@@ -44,30 +45,21 @@ deleteButton.addEventListener('click', e => {
 displayDataSection.addEventListener('click', e => {
     const card = e.target.closest('.card');
 
-    highlightSelectedCard(card)
+    highlightSelectedCard(card, e)
+    showButton(deleteButton)
 })
 
-function showButton(button){
-    button.classList.remove("hidden")
-}
-
-function hideDeleteButton(cardContainer){
+function hideDeleteButton(cardContainer, deleteButton){
     if(cardContainer.querySelectorAll("details.highlighted").length === 0) {
         console.log("No cards selected.")
         deleteButton.classList.add("hidden")
     } 
 }
 
-function hideFormSubmitButton(otherButtons){
-    
-}
-
-
 function queryDBForExistingEntry(nameOfIngredient){
     //Let's provide first fixed fake values. 
     //Calling information from indexeddb feature should come later...
     const ingredientObj = {
-        id: idCounter,
         name: nameOfIngredient,
         amount: 100,
         calories: 156,
@@ -82,3 +74,10 @@ function queryDBForExistingEntry(nameOfIngredient){
   
     return ingredientObj;
 }
+
+
+function hideFormSubmitButton(otherButtons){
+    
+}
+
+

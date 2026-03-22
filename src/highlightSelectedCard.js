@@ -1,14 +1,13 @@
-export function highlightSelectedCard(card){
+export function highlightSelectedCard(card, event){
     if (card) {
-        if(e.target.tagName === 'DETAILS'){
+        if(event.target.tagName === 'DETAILS'){
             card.dataset.selected = card.dataset.selected !== 'true';
             
             //Highlight select radio button
-            e.target.classList.toggle("highlighted")
+            event.target.classList.toggle("highlighted")
             
             //Highlight card
-            e.target.firstElementChild.firstElementChild.classList.toggle("highlighted")
+            event.target.firstElementChild.firstElementChild.classList.toggle("highlighted")
         }
-        showButton(deleteButton)
     }
 }
