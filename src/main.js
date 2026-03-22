@@ -29,7 +29,7 @@ deleteButton.addEventListener('click', e => {
     const entriesToBeDeletedNodeList = document.querySelectorAll('[data-selected="true"]');
     
     removeSelectedEntries(entriesToBeDeletedNodeList)
-    hideDeleteButton(displayDataSection);
+    hideDeleteButton(displayDataSection, deleteButton);
 })
 
 displayDataSection.addEventListener('click', e => {
