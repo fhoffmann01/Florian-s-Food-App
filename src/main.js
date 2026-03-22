@@ -67,14 +67,15 @@ function showButton(button){
 }
 
 function hideDeleteButton(cardContainer){
-    if(cardContainer.querySelectorAll("details.highlighted").length !== 0) {
-        console.log("There are still selected cards.")
-    } else {
+    if(cardContainer.querySelectorAll("details.highlighted").length === 0) {
         console.log("No cards selected.")
         deleteButton.classList.add("hidden")
-    }
+    } 
 }
 
+function hideFormSubmitButton(otherButtons){
+    
+}
 
 
 function queryDBForExistingEntry(nameOfIngredient){
