@@ -22,7 +22,6 @@ inputForm.addEventListener('submit', (e) => {
     
     const scaledDataset = scaleDataset(dbDataset, consumedAmount);
     
-    showDeleteButton()
 
     renderCardList(scaledDataset, template, displayDataSection);
 })
@@ -38,9 +37,9 @@ deleteButton.addEventListener('click', e => {
     } else {
         console.log("No entries selected.")
     }
+
+    hideDeleteButton(displayDataSection)
     
-//PROBLEM: WHEN SELECTING A SECOND, FORTH, SIXTH ENTRY, THE BUTTONS ALSO TOGGLE.
-//=> ONLY TOGGLE DELETE BTN WHEN DATA-SELECTED OF TARGET FALSE
 })
 
 
@@ -58,13 +57,7 @@ displayDataSection.addEventListener('click', e => {
             //Highlight card
             e.target.firstElementChild.firstElementChild.classList.toggle("highlighted")   
             
-            if(displayDataSection.querySelectorAll("details.highlighted").length !== 0) {
-                console.log("There are still selected cards.")
-            } else {
-                console.log("No cards selected.")
-                deleteButton.classList.add("hidden")
-            }
-         
+            showDeleteButton()
         }
     }
 })
@@ -73,7 +66,14 @@ function showDeleteButton(){
     deleteButton.classList.remove("hidden")
 }
 
-
+function hideDeleteButton(cardContainer){
+    if(cardContainer.querySelectorAll("details.highlighted").length !== 0) {
+        console.log("There are still selected cards.")
+    } else {
+        console.log("No cards selected.")
+        deleteButton.classList.add("hidden")
+    }
+}
 
 
 
