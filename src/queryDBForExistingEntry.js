@@ -1,4 +1,4 @@
-function queryDBForExistingEntry(nameOfIngredient){
+export function queryDBForExistingEntry(nameOfIngredient){
     //Let's provide first fixed fake values. 
     //Calling information from indexeddb feature should come later...
     const ingredientObj = {
