@@ -57,13 +57,13 @@ displayDataSection.addEventListener('click', e => {
             //Highlight card
             e.target.firstElementChild.firstElementChild.classList.toggle("highlighted")   
             
-            showDeleteButton()
+            showButton(deleteButton)
         }
     }
 })
 
-function showDeleteButton(){
-    deleteButton.classList.remove("hidden")
+function showButton(button){
+    button.classList.remove("hidden")
 }
 
 function hideDeleteButton(cardContainer){
