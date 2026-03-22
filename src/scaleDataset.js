@@ -13,3 +13,4 @@ export function scaleDataset(dbDataset, consumedAmount){
 
     return dbDataset;
 }
+

@@ -2,6 +2,7 @@ import { createDataset } from "./createDataset.js"
 import { scaleDataset } from "./scaleDataset.js"
 import  { removeSelectedEntries } from "./removeSelectedEntries.js"
 import { highlightSelectedCard } from "./highlightSelectedCard.js"
+import { renderCardList } from "./renderCardList.js"
 
 
 const inputForm = document.getElementById("input-form");
@@ -31,8 +32,6 @@ inputForm.addEventListener('submit', (e) => {
     renderCardList(scaledDataset, template, displayDataSection);
 })
 
-
-
 //Delete Selection
 deleteButton.addEventListener('click', e => {
     const entriesToBeDeletedNodeList = document.querySelectorAll('[data-selected="true"]');
@@ -41,8 +40,6 @@ deleteButton.addEventListener('click', e => {
     hideDeleteButton(displayDataSection);
 
 })
-
-
 
 displayDataSection.addEventListener('click', e => {
     const card = e.target.closest('.card');
@@ -84,24 +81,4 @@ function queryDBForExistingEntry(nameOfIngredient){
     }
   
     return ingredientObj;
-}
-
-
-
-function renderCardList(cardData, template, templateContainer){
-    const node = document.importNode(template.content, true);
-
-    node.querySelector(".ingredient-name").textContent = cardData["name"]
-    node.querySelector(".ingredient-amount").textContent = `${cardData["amount"].toFixed(0)} g`
-    node.querySelector(".calories").textContent = `${cardData["calories"].toFixed(0)} kcal`
-    node.querySelector(".carbohydrates").textContent = `${cardData["carbohydrates"].toFixed(0)} g` 
-    node.querySelector(".thereof-sugars").textContent = `${cardData["thereofSugars"].toFixed(0)} g`
-    node.querySelector(".fats").textContent = `${cardData["fats"].toFixed(0)} g`
-    node.querySelector(".thereof-fattyacids").textContent = `${cardData["thereofSatFattyAcids"].toFixed(0)} g`
-    node.querySelector(".proteins").textContent = `${cardData["proteins"].toFixed(0)} g`
-    node.querySelector(".fibre").textContent = `${cardData["fibre"].toFixed(0)} g`
-    node.querySelector(".salt").textContent = `${cardData["salt"].toFixed(0)} g`
-
-    templateContainer.appendChild(node);
-    
 }
