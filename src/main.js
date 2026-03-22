@@ -1,5 +1,6 @@
 import { createDataset } from "./createDataset.js"
 import { scaleDataset } from "./scaleDataset.js"
+import  { removeSelectedEntries } from "./removeSelectedEntries.js"
 
 const inputForm = document.getElementById("input-form");
 const displayDataSection = document.querySelector(".display-data-section");
@@ -34,13 +35,8 @@ inputForm.addEventListener('submit', (e) => {
 deleteButton.addEventListener('click', e => {
     const entriesToBeDeletedNodeList = document.querySelectorAll('[data-selected="true"]');
     
-    if(entriesToBeDeletedNodeList){
-        for(let entry of entriesToBeDeletedNodeList){
-            entry.parentElement.removeChild(entry)
-        }
-    } else {
-        console.log("No entries selected.");
-    }
+    removeSelectedEntries(entriesToBeDeletedNodeList)
+    
 
     hideDeleteButton(displayDataSection);
 
