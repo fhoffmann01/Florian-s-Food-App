@@ -19,6 +19,12 @@
     background-color: colors.$redOne;
 }
 
+.cancel-button {
+    color: colors.$whiteTwo;
+    background-color: colors.$yellowOne;
+    
+}
+
 .delete-button:focus, 
 .form-submit-button:focus {
     opacity: .8;

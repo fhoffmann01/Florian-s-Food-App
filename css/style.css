@@ -104,6 +104,11 @@
   background-color: hsl(0, 100%, 30%);
 }
 
+.cancel-button {
+  color: rgb(242, 246, 249);
+  background-color: hsl(18, 55%, 60%);
+}
+
 .delete-button:focus,
 .form-submit-button:focus {
   opacity: 0.8;
