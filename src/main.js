@@ -6,10 +6,13 @@ import { renderCardList } from "./renderCardList.js"
 import { queryDBForExistingEntry } from "./queryDBForExistingEntry.js"
 import { showButton } from "./showButton.js"
 import { hideDeleteButton } from "./hideDeleteButton.js"
+import { hideFormSubmitButton } from "./hideFormSubmitButton.js"
+
 
 const inputForm = document.getElementById("input-form");
 const displayDataSection = document.querySelector(".display-data-section");
 const deleteButton = document.querySelector(".delete-button")
+const formSubmitButton = document.querySelector(".form-submit-button")
 
 
 inputForm.addEventListener('submit', (e) => {
@@ -28,8 +31,9 @@ deleteButton.addEventListener('click', e => {
     const entriesToBeDeletedNodeList = document.querySelectorAll('[data-selected="true"]');
     
     removeSelectedEntries(entriesToBeDeletedNodeList)
-    hideDeleteButton(displayDataSection, deleteButton);
-    
+    hideDeleteButton(displayDataSection, deleteButton);    
+
+    showButton(formSubmitButton)
 })
 
 displayDataSection.addEventListener('click', e => {
@@ -38,13 +42,6 @@ displayDataSection.addEventListener('click', e => {
     highlightSelectedCard(card, e)
     showButton(deleteButton)
 
-    hideFormSubmitButton()
+    hideFormSubmitButton(formSubmitButton)
 })
-
-function hideFormSubmitButton(){
-    const formSubmitButton = document.querySelector(".form-submit-button")
-
-    formSubmitButton.classList.add("hidden")
-}
-
 
