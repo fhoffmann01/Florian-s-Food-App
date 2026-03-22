@@ -10,7 +10,6 @@ import { hideDeleteButton } from "./hideDeleteButton.js"
 const inputForm = document.getElementById("input-form");
 const displayDataSection = document.querySelector(".display-data-section");
 const deleteButton = document.querySelector(".delete-button")
-const formSubmitButton = document.querySelector(".form-submit-button")
 
 
 inputForm.addEventListener('submit', (e) => {
@@ -30,6 +29,7 @@ deleteButton.addEventListener('click', e => {
     
     removeSelectedEntries(entriesToBeDeletedNodeList)
     hideDeleteButton(displayDataSection, deleteButton);
+    
 })
 
 displayDataSection.addEventListener('click', e => {
@@ -37,12 +37,14 @@ displayDataSection.addEventListener('click', e => {
 
     highlightSelectedCard(card, e)
     showButton(deleteButton)
+
+    hideFormSubmitButton()
 })
 
+function hideFormSubmitButton(){
+    const formSubmitButton = document.querySelector(".form-submit-button")
 
-
-function hideFormSubmitButton(otherButtons){
-    
+    formSubmitButton.classList.add("hidden")
 }
 
 
