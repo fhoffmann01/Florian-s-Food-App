@@ -1,4 +1,5 @@
 import { createDataset } from "./createDataset.js"
+import { scaleDataset } from "./scaleDataset.js"
 
 const inputForm = document.getElementById("input-form");
 const displayDataSection = document.querySelector(".display-data-section");
@@ -16,13 +17,13 @@ inputForm.addEventListener('submit', (e) => {
 
     const consumedAmount = parseFloat(formObj["amount"]);
 
-    const template = document.getElementById("ingredient-card");
     idCounter += 1
-    //console.log(idCounter)
+    
     const dbDataset = queryDBForExistingEntry(formObj["name"]);
     
     const scaledDataset = scaleDataset(dbDataset, consumedAmount);
     
+    const template = document.getElementById("ingredient-card");
 
     renderCardList(scaledDataset, template, displayDataSection);
 })
@@ -101,21 +102,7 @@ function queryDBForExistingEntry(nameOfIngredient){
     return ingredientObj;
 }
 
-function scaleDataset(dbDataset, consumedAmount){
-    const factor = consumedAmount / dbDataset["amount"]
-    
-    dbDataset["amount"] = (factor * dbDataset["amount"]);
-    dbDataset["calories"] = (factor * dbDataset["calories"]);
-    dbDataset["carbohydrates"] = (factor * dbDataset["carbohydrates"]);
-    dbDataset["thereofSugars"] = (factor * dbDataset["thereofSugars"]);
-    dbDataset["fats"] = (factor * dbDataset["fats"]);
-    dbDataset["thereofSatFattyAcids"] = (factor * dbDataset["thereofSatFattyAcids"]);
-    dbDataset["proteins"] = (factor * dbDataset["proteins"]);
-    dbDataset["fibre"] = (factor * dbDataset["fibre"]);
-    dbDataset["salt"] = (factor * dbDataset["salt"]);
 
-    return dbDataset;
-}
 
 function renderCardList(cardData, template, templateContainer){
     const node = document.importNode(template.content, true);
