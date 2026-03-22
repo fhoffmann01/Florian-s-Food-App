@@ -1,3 +1,5 @@
+import { createDataset } from "./createDataset.js"
+
 const inputForm = document.getElementById("input-form");
 const displayDataSection = document.querySelector(".display-data-section");
 const deleteButton = document.querySelector(".delete-button")
@@ -10,8 +12,7 @@ inputForm.addEventListener('submit', (e) => {
 
     //console.log(e)
 
-    const inputFormData = new FormData(inputForm);
-    const formObj = Object.fromEntries(inputFormData);
+    const formObj = createDataset(inputForm)
 
     const consumedAmount = parseFloat(formObj["amount"]);
 
@@ -26,6 +27,8 @@ inputForm.addEventListener('submit', (e) => {
     renderCardList(scaledDataset, template, displayDataSection);
 })
 
+
+
 //Delete Selection
 deleteButton.addEventListener('click', e => {
     const entriesToBeDeletedNodeList = document.querySelectorAll('[data-selected="true"]');
@@ -35,11 +38,11 @@ deleteButton.addEventListener('click', e => {
             entry.parentElement.removeChild(entry)
         }
     } else {
-        console.log("No entries selected.")
+        console.log("No entries selected.");
     }
 
-    hideDeleteButton(displayDataSection)
-    
+    hideDeleteButton(displayDataSection);
+
 })
 
 
@@ -81,7 +84,7 @@ function hideFormSubmitButton(otherButtons){
 function queryDBForExistingEntry(nameOfIngredient){
     //Let's provide first fixed fake values. 
     //Calling information from indexeddb feature should come later...
-    ingredientObj = {
+    const ingredientObj = {
         id: idCounter,
         name: nameOfIngredient,
         amount: 100,
