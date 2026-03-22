@@ -1,6 +1,8 @@
 import { createDataset } from "./createDataset.js"
 import { scaleDataset } from "./scaleDataset.js"
 import  { removeSelectedEntries } from "./removeSelectedEntries.js"
+import { highlightSelectedCard } from "./highlightSelectedCard.js"
+
 
 const inputForm = document.getElementById("input-form");
 const displayDataSection = document.querySelector(".display-data-section");
@@ -36,8 +38,6 @@ deleteButton.addEventListener('click', e => {
     const entriesToBeDeletedNodeList = document.querySelectorAll('[data-selected="true"]');
     
     removeSelectedEntries(entriesToBeDeletedNodeList)
-    
-
     hideDeleteButton(displayDataSection);
 
 })
@@ -47,19 +47,7 @@ deleteButton.addEventListener('click', e => {
 displayDataSection.addEventListener('click', e => {
     const card = e.target.closest('.card');
 
-    if (card) {
-        if(e.target.tagName === 'DETAILS'){
-            card.dataset.selected = card.dataset.selected !== 'true';
-            
-            //Highlight select radio button
-            e.target.classList.toggle("highlighted")
-            
-            //Highlight card
-            e.target.firstElementChild.firstElementChild.classList.toggle("highlighted")   
-            
-            showButton(deleteButton)
-        }
-    }
+    highlightSelectedCard(card)
 })
 
 function showButton(button){
