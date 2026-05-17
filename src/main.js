@@ -5,12 +5,13 @@ import { highlightSelectedCard } from "./highlightSelectedCard.js"
 import { renderCardList } from "./renderCardList.js"
 import { queryDBForExistingEntry } from "./queryDBForExistingEntry.js"
 import { showButton } from "./showButton.js"
-import { hideDeleteButton } from "./hideDeleteButton.js"
+import { hideButton } from "./hideButton.js"
 import { hideFormSubmitButton } from "./hideFormSubmitButton.js"
 
 
 const inputForm = document.getElementById("input-form");
 const displayDataSection = document.querySelector(".display-data-section");
+const cancelButton = document.querySelector(".cancel-button")
 const deleteButton = document.querySelector(".delete-button")
 const formSubmitButton = document.querySelector(".form-submit-button")
 
@@ -31,7 +32,8 @@ deleteButton.addEventListener('click', e => {
     const entriesToBeDeletedNodeList = document.querySelectorAll('[data-selected="true"]');
     
     removeSelectedEntries(entriesToBeDeletedNodeList)
-    hideDeleteButton(displayDataSection, deleteButton);    
+    hideButton(displayDataSection, cancelButton);    
+    hideButton(displayDataSection, deleteButton);    
 
     showButton(formSubmitButton)
 })
@@ -43,7 +45,9 @@ displayDataSection.addEventListener('click', e => {
     const selectedEntriesArr = document.querySelectorAll("[data-selected='true']")
     
     if(selectedEntriesArr.length > 0){
+        showButton(cancelButton)
         showButton(deleteButton)
+
         hideFormSubmitButton(formSubmitButton)
     }
     
