@@ -69,12 +69,12 @@
         <section class="input-container">
             <form action="" id="input-form" class="input-form">
                 <label for="ingredients-name" class="input-section label">Name der Zutat</label>
-                <input type="text" name="name" id="ingredients-name" class="input-field">
+                <input type="text" name="name" id="ingredients-name" class="input-field" required>
 
                 <label for="ingredients-amount" class="input-section label">Menge (g)</label>
-                <input type="number" name="amount" id="ingredients-amount" class="input-field" min="0">
+                <input type="number" name="amount" id="ingredients-amount" class="input-field" min="0" required>
                 <div class="button-container">
-                    <!--<button type="button" id="cancel-button" class="button cancel-button">Abbrechen</button>-->
+                    <button type="button" id="cancel-button" class="button cancel-button hidden">Abbrechen</button>
                     <button type="button" id="delete-button" class="button delete-button hidden">Entfernen</button>
                     <button type="submit" id="form-submit-button" class="button form-submit-button">Zutat hinzufügen</button>
                 </div>

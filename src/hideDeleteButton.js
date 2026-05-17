@@ -1,6 +1,6 @@
-export function hideDeleteButton(cardContainer, deleteButton){
+export function hideDeleteButton(cardContainer, buttonToHide){
     if(cardContainer.querySelectorAll("details.highlighted").length === 0) {
         console.log("No cards selected.")
-        deleteButton.classList.add("hidden")
+        buttonToHide.classList.add("hidden")
     } 
 }
