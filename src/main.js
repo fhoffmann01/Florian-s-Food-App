@@ -28,6 +28,16 @@ inputForm.addEventListener('submit', (e) => {
     renderCardList(scaledDataset, template, displayDataSection);
 })
 
+cancelButton.addEventListener('click', e => {
+    const entriesToBeDeSelectedNodeList = document.querySelectorAll('[data-selected="true"]');
+    
+    removeSelectedEntries(entriesToBeDeSelectedNodeList)
+    hideButton(displayDataSection, cancelButton);    
+    hideButton(displayDataSection, deleteButton);    
+
+    showButton(formSubmitButton)
+})
+
 deleteButton.addEventListener('click', e => {
     const entriesToBeDeletedNodeList = document.querySelectorAll('[data-selected="true"]');
     
@@ -37,6 +47,8 @@ deleteButton.addEventListener('click', e => {
 
     showButton(formSubmitButton)
 })
+
+
 
 displayDataSection.addEventListener('click', e => {
     const card = e.target.closest('.card');
