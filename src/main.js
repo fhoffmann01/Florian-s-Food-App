@@ -40,8 +40,11 @@ displayDataSection.addEventListener('click', e => {
     const card = e.target.closest('.card');
 
     highlightSelectedCard(card, e)
-    showButton(deleteButton)
-
-    hideFormSubmitButton(formSubmitButton)
+    const selectedEntriesArr = document.querySelectorAll("[data-selected='true']")
+    
+    if(selectedEntriesArr.length > 0){
+        showButton(deleteButton)
+        hideFormSubmitButton(formSubmitButton)
+    }
+    
 })
-
