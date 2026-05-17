@@ -16,7 +16,7 @@ const deleteButton = document.querySelector(".delete-button")
 const formSubmitButton = document.querySelector(".form-submit-button")
 
 
-inputForm.addEventListener('submit', (e) => {
+inputForm.addEventListener('submit', e => {
     e.preventDefault();
 
     const formObj = createDataset(inputForm)
@@ -47,8 +47,6 @@ deleteButton.addEventListener('click', e => {
 
     showButton(formSubmitButton)
 })
-
-
 
 displayDataSection.addEventListener('click', e => {
     const card = e.target.closest('.card');

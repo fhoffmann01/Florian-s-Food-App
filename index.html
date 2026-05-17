@@ -69,8 +69,15 @@
         <section class="input-container">
             <form action="" id="input-form" class="input-form">
                 <label for="ingredients-name" class="input-section label">Name der Zutat</label>
-                <input type="text" name="name" id="ingredients-name" class="input-field" required>
-
+                <input type="text" list="food-list" name="name" id="ingredients-name" class="input-field" required>
+                    <datalist id="food-list">
+                        <!--Static list. Dynamic feeding will come later...-->
+                        <option value="Brot"></option>
+                        <option value="Quark"></option>
+                        <option value="Schinken"></option>
+                        <option value="Ei"></option>
+                        <option value="Käse"></option>
+                    </datalist>
                 <label for="ingredients-amount" class="input-section label">Menge (g)</label>
                 <input type="number" name="amount" id="ingredients-amount" class="input-field" min="0" required>
                 <div class="button-container">
