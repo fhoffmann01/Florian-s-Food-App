@@ -78,5 +78,10 @@ const IDB = (function init() {
     DBOpenReq.addEventListener('upgradeneeded', e => {
         db = e.target.result;
         console.log('upgrade', db)
+
+        objectStore = db.createObjectStore('foodStore', {
+            keyPath: 'id'
+        });
+
     })
 })()
