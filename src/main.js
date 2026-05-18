@@ -65,5 +65,18 @@ const IDB = (function init() {
     let db = null;
     let objectStore = null;
     let DBOpenReq = indexedDB.open("FoodDB");
+    
+    DBOpenReq.addEventListener('error', err => {
+        console.log(err);
+    })
 
+    DBOpenReq.addEventListener('success', e => {
+        db = e.target.result;
+        console.log('success', db)
+    })
+
+    DBOpenReq.addEventListener('upgradeneeded', e => {
+        db = e.target.result;
+        console.log('upgrade', db)
+    })
 })()
