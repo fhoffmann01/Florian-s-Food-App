@@ -86,5 +86,23 @@ const IDB = (function init() {
         });
     })
 
-    
+    let ingredient = {
+        dateOfPurchase,
+        store,
+        nameOfFood,
+        brand, 
+        eanCode,
+        totalWeight,
+        weightPerPiece,
+        pricePerPackagingUnit,
+        energyKcal, 
+        fats,
+        thereofFattyAcids,
+        carbs,
+        thereofSugars,
+        fibre,
+        protein,
+        salt,
+        sourceOfNutritionValueInformation
+    }
 })()
