@@ -1,0 +1,76 @@
+@use '../abstracts/colors';
+
+
+.add-ingredient-wrapper {
+    //border: none;
+    box-sizing: border-box;
+    position: absolute;
+    top: 85%;
+    transform: translateY(-50%);
+
+    background-color: colors.$manjaro-grey;
+    width: 90%;
+    border-radius: 1.2em;
+    margin: auto auto 0 auto;
+}
+
+
+.ingredient-input-dialog{
+    
+    display: grid;
+    grid-template-rows: 2em 2em 2em 2em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1em;
+    align-items: center;
+
+
+    & .col-3 {
+        color: colors.$whiteOne;
+        text-align: left;
+        margin-right: auto;
+        font-size: 1rem;
+        vertical-align: middle;
+        font-weight: 800;
+    }
+
+    & .value {
+        border-radius: 1em;
+        border: none;
+        background-color: colors.$manjaro-slight-grey;
+        color: colors.$whiteOne;
+        width: 100%;
+        text-align: center;
+        
+        line-height: 2em;
+    }
+
+
+    .headline-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-column-start: 1;
+        grid-column-end: 5;
+    }
+    .headline {
+        width: 100%;
+        text-align: center;
+        color: colors.$whiteOne;
+    }
+    .invisible-spacer{
+        height: 1em;
+    }
+
+}
+    
+
+
+/*
+body { display: grid;
+       grid: "h h h"
+             "a b c"
+             "f f f";
+       grid-template-columns: auto 1fr 20%; }
+main    { grid-area: b; min-width: 12em;     }
+nav     { grid-area: a; /* auto min-width */ //}
+//aside   { grid-area: c; min-width: 12em;     }

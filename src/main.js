@@ -105,4 +105,8 @@ const IDB = (function init() {
         salt,
         sourceOfNutritionValueInformation
     }
+
+    
 })()
+
+//Make dialog field with upload features: import CSV
