@@ -64,7 +64,13 @@ displayDataSection.addEventListener('click', e => {
         showButton(deleteButton)
 
         hideFormSubmitButton(formSubmitButton)
-    }
+    }   
+})
+
+const IDB = (function init() {
+    let db = null;
+    let objectStore = null;
+    let DBOpenReq = indexedDB.open("FoodDB");
     
 })
 
