@@ -8,14 +8,12 @@
 </head>
 
 <body>
-    <dialog open class="add-ingredient-wrapper">
+    <dialog open id="ingredient-input-wrapper">
         <div class="ingredient-input-dialog">
             <div class="headline-wrapper">
                 <p class="col-3 name headline">Name</p>
                 <input class="name value headline">
-                <p class="invisible-spacer"></p>
             </div>
-           
 
             <input class="calories value">
             <p class="col-3">Kalorien</p>
@@ -47,7 +45,9 @@
          
         </div>
         <div class="button-bar">
-            <button type="button" id="" class="button ">Abbrechen</button>
+            <button type="button" class="button close-modal-button">Abbrechen</button>
+            <button type="button" class="button modal-submit-button">Zutat hinzufügen</button>
+            <button type="button" class="button scanner-button">Etikett scannen</button>  
         </div>
     </dialog>
     <header class="header">
