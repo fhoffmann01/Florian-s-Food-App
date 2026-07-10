@@ -14,7 +14,12 @@ const displayDataSection = document.querySelector(".display-data-section");
 const cancelButton = document.querySelector(".cancel-button")
 const deleteButton = document.querySelector(".delete-button")
 const formSubmitButton = document.querySelector(".form-submit-button")
+const registerButton = document.querySelector(".register-button")
+const registerIngredientDialog = document.getElementById("ingredient-input-wrapper") 
 
+
+console.log("registerButton: ", registerButton)
+console.log("registerIngredientDialog: ", registerIngredientDialog)
 
 inputForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -61,6 +66,10 @@ displayDataSection.addEventListener('click', e => {
         hideFormSubmitButton(formSubmitButton)
     }
     
+})
+
+registerButton.addEventListener('click', () => {
+    registerIngredientDialog.show();
 })
 
 const IDB = (function init() {
