@@ -8,6 +8,48 @@
 </head>
 
 <body>
+    <dialog id="ingredient-input-wrapper">
+        <div class="ingredient-input-dialog">
+            <div class="headline-wrapper">
+                <p class="col-3 name headline">Name</p>
+                <input class="name value headline">
+            </div>
+
+            <input class="calories value">
+            <p class="col-3">Kalorien</p>
+
+            <input class="proteins value">
+            <p class="col-3">Eiweiß</p>
+
+            <input class="carbohydrates value">
+            <p class="col-3">Kohlenhydrate</p>
+
+            <input class="thereof-sugars value">
+            <p class="col-3">davon Zucker</p>
+
+            <input class="fats value">
+            <p class="col-3">Fett</p>
+
+            <input class="thereof-fattyacids value">
+            <p class="col-3">davon ges. Fettsäuren</p>
+            
+            <input class="fibre value">
+            <p class="col-3">Ballaststoffe</p>
+
+            <input class="salt value">        
+            <p class="col-3">Salz</p>
+        <!--<div class="label-value-wrapper">
+                
+            </div>
+        -->    
+         
+        </div>
+        <div class="button-bar">
+            <button type="button" class="button close-modal-button">Abbrechen</button>
+            <button type="button" class="button modal-submit-button">Zutat hinzufügen</button>
+            <button type="button" class="button scanner-button">Scannen</button>  
+        </div>
+    </dialog>
     <header class="header">
         <h1 class="headline">My Food App</h1>
         <nav class="nav-bar">
@@ -63,7 +105,8 @@
                         </tr>
                     </tbody>
                 </table>
-            </article>    
+            </article>
+            
         </section>
         
         <section class="input-container">
@@ -84,6 +127,8 @@
                     <button type="button" id="cancel-button" class="button cancel-button hidden">Abbrechen</button>
                     <button type="button" id="delete-button" class="button delete-button hidden">Entfernen</button>
                     <button type="submit" id="form-submit-button" class="button form-submit-button">Zutat hinzufügen</button>
+                    <button type="button" id="register-button" class="button register-button">Zutat registrieren</button>
+
                 </div>
             </form>
         </section>

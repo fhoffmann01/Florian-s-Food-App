@@ -14,6 +14,12 @@ const displayDataSection = document.querySelector(".display-data-section");
 const cancelButton = document.querySelector(".cancel-button")
 const deleteButton = document.querySelector(".delete-button")
 const formSubmitButton = document.querySelector(".form-submit-button")
+const registerButton = document.querySelector(".register-button")
+const registerIngredientDialog = document.getElementById("ingredient-input-wrapper") 
+
+
+console.log("registerButton: ", registerButton)
+console.log("registerIngredientDialog: ", registerIngredientDialog)
 
 inputForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -66,6 +72,17 @@ const IDB = (function init() {
     let objectStore = null;
     let DBOpenReq = indexedDB.open("FoodDB");
     
+})
+
+registerButton.addEventListener('click', () => {
+    registerIngredientDialog.show();
+})
+
+const IDB = (function init() {
+    let db = null;
+    let objectStore = null;
+    let DBOpenReq = indexedDB.open("FoodDB");
+    
     DBOpenReq.addEventListener('error', err => {
         console.log(err);
     })
@@ -82,6 +99,29 @@ const IDB = (function init() {
         objectStore = db.createObjectStore('foodStore', {
             keyPath: 'id'
         });
-
     })
+
+    let ingredient = {
+        dateOfPurchase,
+        store,
+        nameOfFood,
+        brand, 
+        eanCode,
+        totalWeight,
+        weightPerPiece,
+        pricePerPackagingUnit,
+        energyKcal, 
+        fats,
+        thereofFattyAcids,
+        carbs,
+        thereofSugars,
+        fibre,
+        protein,
+        salt,
+        sourceOfNutritionValueInformation
+    }
+
+    
 })()
+
+//Make dialog field with upload features: import CSV

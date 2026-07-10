@@ -4,6 +4,7 @@ $font-stack: Helvetica, Arial, sans-serif;
 @use './components/card';
 @use './components/inputForm';
 @use './components/button';
+@use './components/dialog';
 
 * {
     margin: 0;

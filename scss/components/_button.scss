@@ -2,11 +2,13 @@
 
 .button {
     border: none;
-    margin: 1em;
+    margin: 1em auto;
 
-    padding: 0.8em 1.75em;
+    padding: 0.5em 1em;
     font-size: 1rem;
     border-radius: 2em;
+
+    font-size: .75rem;
 }
 
 .form-submit-button {
@@ -19,10 +21,11 @@
     background-color: colors.$redOne;
 }
 
-.cancel-button {
+.cancel-button, 
+.close-modal-button {
     color: colors.$whiteTwo;
-    background-color: colors.$yellowOne;
-    
+    text-shadow: 0 0 25px black;
+    background-color: colors.$orangeOne;
 }
 
 .delete-button:focus, 
@@ -30,7 +33,35 @@
     opacity: .8;
 }
 
-.delete-button:active,
-.form-submit-button:active {
-    opacity: .24;
+.close-modal-button {
+    border-radius: .5em;
+    margin: 1em 0 0 0; 
+    
+
+    flex-grow: 2;
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+
+.modal-submit-button{
+    margin: 1em 1em 0 1em; 
+
+    background-color: colors.$dark-green;
+    color: colors.$whiteOne;
+
+    border-radius: .5em;
+
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+
+.scanner-button{
+    margin: 1em 0 0 0; 
+
+    border-radius: .5em;
+
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto; //follow width prop.
 }
